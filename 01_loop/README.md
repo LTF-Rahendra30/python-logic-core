@@ -1,0 +1,18 @@
+# Loops — Core Logic (Python)
+
+Tujuan:
+Melatih logika pengulangan dalam pemrograman.
+
+Yang dipelajari:
+- for loop
+- while loop
+- break & continue
+- nested loop
+
+Kesalahan umum:
+- Infinite loop
+- Salah kondisi berhenti
+- Loop terlalu kompleks
+
+Catatan pribadi:
+Hari ini gue mulai bangun logic core dari nol. Fokus gue bukan cepet, tapi konsisten & paham.
