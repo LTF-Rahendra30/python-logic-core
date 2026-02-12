@@ -10,8 +10,6 @@ This repository documents my journey learning core Python logic:
 - OOP
 - Data Structures
 
-Progress will be updated weekly.
-
 Repository ini adalah dokumentasi perjalanan saya memperkuat fundamental Python:
 - Loop
 - Function
