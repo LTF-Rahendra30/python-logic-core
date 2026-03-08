@@ -1,4 +1,4 @@
-# Modul 02 — Range & Index Iteration
+# Modul 02 Range & Index Iteration
 
 
 **Tujuan:**  
