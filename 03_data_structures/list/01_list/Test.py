@@ -1,1 +1,1 @@
-
+data = ["BTC","ETH","SOL"]
