@@ -1,4 +1,4 @@
-# 03 — Enumerate Usage
+# 03 Enumerate Usage
 
 ## Overview
 `enumerate()` is a built-in Python function that allows us to loop through an iterable while also keeping track of the index of each element.
