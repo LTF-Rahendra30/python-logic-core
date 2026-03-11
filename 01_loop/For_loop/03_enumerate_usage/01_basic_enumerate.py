@@ -24,6 +24,28 @@ for index, value in enumerate(data):
 
 print("/n----------------/n")
 
+#Another example name data with enumerate
+
+data = [
+    "Adams"
+    "Bobby"
+    "Charley"
+    "Dory"
+]
+
+for index, name in enumerate(data):
+    print(index, name)
+
+#The output is like this 
+
+"""
+0 Adams
+1 Bobby 
+2 Charley 
+3 Dory
+"""
+print("/n----------------/n")
+
 #Example transaction data in blokchain with enumerate 
 transactions = [
 "0xa1f4",
