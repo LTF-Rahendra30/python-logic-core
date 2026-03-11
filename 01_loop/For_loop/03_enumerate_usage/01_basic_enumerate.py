@@ -8,14 +8,23 @@ data = ["apple","banana","mango"]
 for index, value in enumerate(data):
     print(index, value)
     
+#The ouotput is like this
+
+""" 
+0 apple
+1 banana
+2 mango
+"""
+    
 #The output from of the list above is:
 #(index,value)
 #index starts from 0 to 2
 #value starts from "apple to mango"
 #This looo has 2 variabel, namely: index and value
 
-#Example transaction data in blokchain with enumerate 
+print("/n----------------/n")
 
+#Example transaction data in blokchain with enumerate 
 transactions = [
 "0xa1f4",
 "0xb9c2",
@@ -24,3 +33,15 @@ transactions = [
 
 for index, tx in enumerate(transaction):
     print("Transaction", index, ":", tx)
+
+
+#The Output is like this:
+
+"""
+Transaction 0 : 0xa1f4
+Transaction 1 : 0xb9c2
+Transaction 2 : 0xf331
+
+"""
+# but why does the output start from index 0 ?? 
+# I will explain in the next file
