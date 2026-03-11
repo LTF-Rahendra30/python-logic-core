@@ -7,14 +7,14 @@ Building strong logic before building smart contracts.
 This repository documents my journey learning core Python logic:
 - Loops
 - Functions
-- OOP
 - Data Structures
+- OOP
 
 Repository ini adalah dokumentasi perjalanan saya memperkuat fundamental Python:
 - Loop
 - Function
-- OOP
 - Data Structure
+- OOP
 - Problem Solving Logic
 
 ## Why This Repo?
@@ -33,8 +33,8 @@ Target:
 
 - [ ] Loops
 - [ ] Functions
-- [ ] OOP
 - [ ] Data Structures
+- [ ] OOP
 - [ ] Mini Project
 
 Progress will be updated consistently.
