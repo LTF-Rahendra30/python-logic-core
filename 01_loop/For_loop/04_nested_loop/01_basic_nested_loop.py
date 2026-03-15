@@ -41,3 +41,17 @@ for outher in range(1,3):
 
     for inner in range(1,4):
         print(" Inner loop: ",inner)
+
+"""
+Te ouput like this:
+
+Outher loop:  1
+ Inner loop:  1
+ Inner loop:  2
+ Inner loop:  3
+Outher loop:  2
+ Inner loop:  1
+ Inner loop:  2
+ Inner loop:  3
+ 
+"""
