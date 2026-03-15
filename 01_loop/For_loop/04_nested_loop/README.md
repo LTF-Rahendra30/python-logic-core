@@ -1,4 +1,4 @@
-# 04 — Nested Loop
+# 04  Nested Loop
 
 ## Overview
 
@@ -80,7 +80,7 @@ Total iterasi:
 ---
 
 
-# Example — Creating a Grid
+# Example  Creating a Grid
 
 
 Nested loops are often used to create a grid or table.
@@ -119,7 +119,7 @@ Contoh di atas mencetak pola bintang berbentuk kotak.
 ---
 
 
-# Example — Multiplication Table
+# Example  Multiplication Table
 
 
 Example:
@@ -155,7 +155,7 @@ Loop luar mewakili baris, dan loop dalam mewakili kolom.
 ---
 
 
-# Example — Simple Blockchain Structure
+# Example  Simple Blockchain Structure
 
 Example:
 
