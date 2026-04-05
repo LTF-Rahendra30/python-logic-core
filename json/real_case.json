@@ -1,0 +1,18 @@
+{
+    "repository": "python-logic-core",
+    "progres": {
+        "loop": true,
+        "data structure": false,
+        "function": false,
+        "object oriented programming": false,
+        "algorithm": false
+    },
+    "tools": [
+        "Vscode",
+        "Github",
+        "Python",
+        "Python Extensions",
+        "Pylance Extensions",
+        "Black Formatter Extensions"
+    ]
+}

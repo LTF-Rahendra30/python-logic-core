@@ -1,0 +1,14 @@
+{
+    "name": "LTF-30",
+    "country": "Indonesian",
+    "active": true,
+    "repo" : "python-logic-core",
+    "goals": [
+        "build a stronger fundamentals",
+        "build a fundamentals progamming skills with python",
+        "build a logical thinking before build a something project",
+        "build a stronger algorthm mindset",
+        "build a fundamentals of back end development"             
+    ]
+}
+

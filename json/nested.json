@@ -1,0 +1,15 @@
+{
+    "user":{
+        "name": "LTF-30",
+        "country": "Indonesian",
+        "active": true,
+        "repo": "python-logic-core",
+        "topics": [
+            "loop",
+            "data structure",
+            "function",
+            "object oriented programming",
+            "algorithm"
+        ]
+    }
+}
