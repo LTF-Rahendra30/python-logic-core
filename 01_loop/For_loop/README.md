@@ -15,7 +15,7 @@ It is designed to strengthen core programming logic, build a developer mindset, 
 - Prepare for more advanced topics like data structures, algorithms, and blockchain systems
 
 ## 📂 Folder Structure
-
+```text
 for_loop/
 ├── 01_basic_for_loop/
 ├── 02_range_iteration/
@@ -23,6 +23,7 @@ for_loop/
 ├── 04_nested_loop/
 ├── 05_algorithmic_pattern/
 └── project/
+```
 
 ## 📖 Description
 
