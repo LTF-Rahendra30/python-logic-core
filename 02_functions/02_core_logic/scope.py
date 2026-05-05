@@ -48,3 +48,14 @@ young()
 """
 The ouput is a : 18, because Global var are overwritten by local var
 """
+# The function that rely on globals var and then change the global var in the loop, the like this:
+
+name = "andrew"
+
+
+def change_name():
+    name = "Barley"
+
+
+print(change_name())
+"""The output is : NONE,"""
