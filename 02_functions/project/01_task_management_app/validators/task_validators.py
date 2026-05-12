@@ -38,6 +38,3 @@ def validate_due_date(due_date):
         return True
     else:
         return False
-
-
-print(validate_due_date("2024-01-10"))
