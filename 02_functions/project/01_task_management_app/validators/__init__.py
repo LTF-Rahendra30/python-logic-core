@@ -5,7 +5,6 @@ from validators.user_validators import (
     check_username,
     check_email,
     validate_owner_exists,
-    validate_email_exists,
 )
 from validators.task_validators import (
     validate_title,
