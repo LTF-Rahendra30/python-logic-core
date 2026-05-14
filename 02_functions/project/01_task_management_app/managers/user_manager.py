@@ -6,6 +6,8 @@ from validators import (
     check_username,
 )
 
+from managers.clear_users_display import clean_display_user, display_multiple_users
+
 users = []  # Globa Users List Variabel
 
 
@@ -48,13 +50,19 @@ def register_user(username, email, password, users_list):
 
 # Get a All Users who Success Registered
 def get_users(users_list):
-    return users_list
+    print("Get All Users who Successed registered")
+    display_multiple_users(users_list)
 
 
 # Get User by Username
 def get_user_by_username(username, users_list):
+    print(f"Get user by username: {username}")
     clean_username = username.lower().strip()
+    result = []
     for usr in users_list:
         if usr["name"] == clean_username:
-            return True, usr  # Return DATA
-    return False, "Username not Registered! "
+            result.append(usr)
+    if result:
+        display_multiple_users(result)
+    else:
+        print(f"Not users found for username {clean_username}")
