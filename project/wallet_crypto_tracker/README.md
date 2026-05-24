@@ -40,6 +40,31 @@ Simple cryptocurrency wallet tracker for manage multiple wallets users with tran
 
 ## 🧠 Core Concepts
 
+### Data Structure Fundamentals
+- Nested lists & dictionaries
+- Accessing nested data (multi-level indexing)
+- Working with complex object relationships
+
+### Function Design
+- Function composition dengan nested data
+- Pure vs impure functions dalam nested context
+- Dependency injection (passing lists as parameters)
+
+### Data Flow & Logic
+- Tracing data through nested structures
+- Complex validation chains
+- Data aggregation & calculation
+
+### Error Handling
+- Validating dependencies (wallet must belong to user)
+- Handling edge cases in nested data
+- Meaningful error messages
+
+### Code Organization
+- Separation of concerns (validators, managers, display)
+- Scope management
+- Clear naming conventions
+
 ## 📂 Folder structure
 ```text
 wallet-crypto-tracker/
