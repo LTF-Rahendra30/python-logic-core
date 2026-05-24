@@ -43,15 +43,15 @@ Simple cryptocurrency wallet tracker for manage multiple wallets users with tran
 ## 📂 Folder structure
 ```text
 wallet-crypto-tracker/
-├── README.md    # Documentation (ini file)
-├── main.py      # Entry point / playground
+├── README.md                    # Documentation (ini file)
+├── main.py                      # Entry point / playground
 │
-├── validators/       # Pure validation functions
+├── validators/                  # Pure validation functions
 │   ├── init.py
-│   ├── user_validators.py  # User validation (email, password, username)
-│   └── wallet_validators.py  # Wallet validation (address, coin type)
+│   ├── user_validators.py       # User validation (email, password, username)
+│   └── wallet_validators.py     # Wallet validation (address, coin type)
 │
-├── managers/   # Business logic & data management
+├── managers/                    # Business logic & data management
 │   ├── init.py
 │   ├── user_manager.py          # User CRUD operations
 │   └── wallet_manager.py        # Wallet & transaction operations
