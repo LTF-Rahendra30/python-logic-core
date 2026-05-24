@@ -10,7 +10,7 @@ def validate_password(password):
 
 def check_username_duplicate(username,users_list):
     for usr in users_list:
-        if usr["name"] == username:
+        if usr["username"] == username:
             return False
     return True
 
