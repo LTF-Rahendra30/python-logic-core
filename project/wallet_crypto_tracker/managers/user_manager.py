@@ -1,4 +1,5 @@
 from validators import (
+    validate_username,
     validate_email,
     validate_password,
     check_email_duplicate,
@@ -11,6 +12,7 @@ users = []  # Global data
 # Register Function
 def register_user(username, email, password, users_list):
     clean_username = username.strip().lower()
+    username_valid = validate_username(clean_username)
     username_check = check_username_duplicate(username, users_list)
     email_format = validate_email(email)
     email_check = check_email_duplicate(email, users_list)
@@ -18,7 +20,7 @@ def register_user(username, email, password, users_list):
 
     # Validate if all function conditional is True
     if (
-        clean_username
+        username_valid
         and username_check
         and email_format
         and email_check
@@ -26,13 +28,13 @@ def register_user(username, email, password, users_list):
     ):
         new_user = {
             "username" : clean_username,
-            "email" : email_format,
-            "password": password_valid,
+            "email" : email,
+            "password": password,
             "wallets" : [] # User wallet
         }
         # Append user in users list 
         users_list.append(new_user)
-        
+
         return True, f"Succesed Register! Welcome {clean_username}"
     else:
         validators = {
@@ -41,7 +43,17 @@ def register_user(username, email, password, users_list):
             "email_duplicate": (not email_check, "The email  has been registered! "),
             "password_format": (not password_valid, "The password must be at least 8 character ")
         }
-        for _, (is_error,error_msg) in validators:
+        for _, (is_error,error_msg) in validators.items():
             if is_error:
                 return False ,error_msg
 
+# Get user by username
+def get_user_by_username(username,users_list):
+    print(f"Get user by username: {username}")
+    clean_username = username.lower().strip()
+
+    for user in users_list:
+        if user["username"] == username:
+            return True,users_list
+        else:
+            return False, f"Not users found for username {clean_username}"

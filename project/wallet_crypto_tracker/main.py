@@ -1,4 +1,9 @@
 from validators.user_validators import validate_username,validate_password
 
-print(validate_username(" "))
-print(validate_password("1231dsddsddadawd"))
+from managers.user_manager import register_user,get_user_by_username,users
+
+# print(validate_username(" "))
+# print(validate_password("1231dsddsddadawd"))
+
+print(register_user("joko","joko@mail.com","joko1234567",users))
+print(get_user_by_username("joko",users))
