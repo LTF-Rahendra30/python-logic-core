@@ -43,7 +43,7 @@ Simple cryptocurrency wallet tracker for manage multiple wallets users with tran
 ## 📂 Folder structure
 ```text
 wallet-crypto-tracker/
-├── README.md                    # Documentation (ini file)
+├── README.md                    # Documentation (this is file)
 ├── main.py                      # Entry point / playground
 │
 ├── validators/                  # Pure validation functions
