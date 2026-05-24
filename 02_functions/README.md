@@ -40,7 +40,6 @@ def add(a, b):
 ├── 01_basic/
 ├── 02_core_logic/
 ├── 03_intermediate/
-├── 04_design_thinking/
 └── project/
 ```
 
@@ -67,12 +66,6 @@ def add(a, b):
 - Combining function with loops and basic eror handling
 - Simple case
 
-### 04_design_thinking/
-
-- Single responbility principle
-- Function naming and Abtraction
-- Recognizing bad function design
-- Simple case
 
 ### project/
 
