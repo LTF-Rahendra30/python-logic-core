@@ -24,14 +24,15 @@ def register_user(username, email, password, users_list):
         and email_check
         and password_valid
     ):
+        new_user = {
+            "username" : clean_username,
+            "email" : email_format,
+            "password": password_valid,
+            "wallets" : [] # User wallet
+        }
         # Append user in users list 
-        users_list.append(
-            {
-                "username": clean_username,
-                "email": email_format,
-                "password": password_valid,
-            }
-        )
+        users_list.append(new_user)
+        
         return True, f"Succesed Register! Welcome {clean_username}"
     else:
         validators = {
