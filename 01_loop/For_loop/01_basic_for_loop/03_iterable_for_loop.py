@@ -24,5 +24,5 @@ print("================================")
 # Mutable loop by memory and nested list data
 
 for i in data2:
-    i[0] *= 2 # Changed data in list, to multiplication 2
+    i[0] *= 2 # Changed individual value in nested list data, to multiplication 2
 print(data2)

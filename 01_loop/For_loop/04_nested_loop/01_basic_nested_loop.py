@@ -10,13 +10,12 @@ Uderstanding how a loop works inside another looop
 
 # Example basic nested loop 1
 print("Example 1: Basic nested loop")
-for i in range(1,3):
-    for j in range(1,4):
-        print(i,j)
+for i in range(1, 3):
+    for j in range(1, 4):
+        print(i, j)
 
 
-
-#The ouput like this
+# The ouput like this
 """
 1 1
 1 2
@@ -33,14 +32,14 @@ for i in range(1,3):
 
 print("\n----------------\n")
 
-#Example nested loop 2 if each velue is printed
+# Example nested loop 2 if each velue is printed
 print("Example 2: Outher vs Inner loop")
 
-for outher in range(1,3):
-    print("Outher loop: ",outher)
+for outher in range(1, 3):
+    print("Outher loop: ", outher)
 
-    for inner in range(1,4):
-        print(" Inner loop: ",inner)
+    for inner in range(1, 4):
+        print(" Inner loop: ", inner)
 
 """
 Te ouput like this:

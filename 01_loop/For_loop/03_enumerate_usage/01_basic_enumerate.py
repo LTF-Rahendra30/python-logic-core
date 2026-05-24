@@ -53,7 +53,7 @@ transactions = [
 "0xf331"
 ]
 
-for index, tx in enumerate(transaction):
+for index, tx in enumerate(transactions):
     print("Transaction", index, ":", tx)
 
 

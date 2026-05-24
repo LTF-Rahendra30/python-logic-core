@@ -10,6 +10,8 @@ def factorial(a):
     return a * factorial(a - 1)
 
 print(factorial(5))
+# print(factorial(0))   This erors 
+# print(factorial(-1))
 
 """
 The output: 120, because:

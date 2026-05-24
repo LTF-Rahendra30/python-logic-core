@@ -22,7 +22,14 @@ for i in range(4):
 
 """
 Ouput like this:
-0
+range(4) ---> (0,1,2,3)
+
+1 0  -> Why like this? because range 0 on range(0) doesn't output
+2 0
+2 1
+3 0
+3 1
+3 2
 
 """
 
