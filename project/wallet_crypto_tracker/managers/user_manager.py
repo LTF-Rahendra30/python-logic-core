@@ -56,15 +56,13 @@ def get_user_by_username(username,users_list):
     print("================================")
     print(f"Get user by username: {username}")
     clean_username = username.lower().strip()
-    result = []
 
     for user in users_list:
         if user["username"] == clean_username:
-            result.append(user)
-    if result:
-        return True, display_single_user(user)
+            display_single_user(user)
+            return True, None
     else:
-        return False, f"Not users found for username {clean_username}"
+        return False,None, f"Not users found for username {clean_username}"
         
 
 # Get All Users

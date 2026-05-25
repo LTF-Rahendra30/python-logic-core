@@ -9,5 +9,5 @@ print(register_user("joko","joko@mail.com","joko1234567",users))
 print(register_user("WOWO","wowo@mail.com","joko1234567",users))
 print(get_user_by_username("joko",users))
 print(get_user_by_username("WOWO",users))
+print(get_user_by_username("bahlil",users))
 
-print(get_all_users(users))
