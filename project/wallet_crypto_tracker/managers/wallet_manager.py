@@ -10,11 +10,11 @@ def add_wallet(username,coin_type,address,users_list):
     found_user = None
 
     for user in users_list:
-        if user["usernname"] == clean_username:
+        if user["username"] == clean_username:
             found_user = user
             break
 
-    else:
+    if found_user is None:
         return (False, f"User {clean_username} not found")
 
     # Validate  Wallet
@@ -28,19 +28,28 @@ def add_wallet(username,coin_type,address,users_list):
             "address": (not valid_wallet_address, "Address must be at least 20 character"),
             "duplicate": (not wallet_duplicate, "Addres alredy register") 
         }
-        for _,(is_error,error_msg) in validators:
+        for _,(is_error,error_msg) in validators.items():
             if is_error:
                 return (False,error_msg)
             
-        # Calculate next wallet id
-    if not found_user["wallets"]:
-        next_id = 1
+    # Calculate next wallet id Wallet ID Number
+    if not found_user["wallets"]: 
+        next_id = 1 # First wallet strat from 1
     else:
-        max_id = 0
-        for wallet in found_user["wallets"]:
-            if wallet["wallet_id"] > max_id:
-                max_id = wallet["wallet_id"]
-        next_id = max_id +1
+        max_id = 0 # Strart tracking from 0
+        for wallet in found_user["wallets"]: 
+            if wallet["wallet_id"] > max_id: # If found ID than greater
+                max_id = wallet["wallet_id"] # Update max id
+        next_id = max_id +1 
+
+        """
+        [wallet_id:1, wallet_id:2, wallet_id:5]
+         ↑           ↑           ↑
+         0 < 1       1 < 2       2 < 5
+         max_id=1    max_id=2    max_id=5
+
+        next_id = 5 + 1 = 6
+        """
     
         # Wallet Data Stucture:
     new_wallet = {
