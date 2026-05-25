@@ -2,9 +2,7 @@
 
 # Clean Display Function
 def display_single_user(user):
-    print(f"""
-Username: {user['username']}
-Email: {user['email']}
+    print(f"""Username: {user['username']} | Email: {user['email']}
 Wallets: {len(user['wallets'])}
 ─────────────────────
 """)
