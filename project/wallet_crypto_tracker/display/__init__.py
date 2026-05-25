@@ -1,1 +1,3 @@
 from display.user_display import display_single_user,display_multiple_users
+
+from display.wallet_display import display_wallet
