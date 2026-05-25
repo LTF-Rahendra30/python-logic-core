@@ -53,7 +53,12 @@ def get_user_by_username(username,users_list):
     clean_username = username.lower().strip()
 
     for user in users_list:
-        if user["username"] == username:
-            return True,users_list
+        if user["username"] == clean_username:
+            return True,user
         else:
             return False, f"Not users found for username {clean_username}"
+        
+
+# Get All Users
+def get_all_users(users_list):
+    return users_list
