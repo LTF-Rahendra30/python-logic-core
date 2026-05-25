@@ -1,1 +1,1 @@
-from display.display_single_user import clean_display_single_user,display_multiple_users
+from display.user_display import clean_display_single_user,display_multiple_users
