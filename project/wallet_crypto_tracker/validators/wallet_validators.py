@@ -10,4 +10,7 @@ def check_wallet_duplicate(address,users_list):
             if adrs["address"] == address:
                 return False
     return True
+
+def validate_balance(balance):
+    return balance > 0
             
