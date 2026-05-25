@@ -1,5 +1,5 @@
 def validate_coin_type(coin_type):
-    return coin_type in ["Bitcoin", "Ethereum", "Solana"]
+    return coin_type in ["BITCOIN", "ETHEREUM", "SOLANA"]
 
 def validate_wallet_address(address):
     return address != "" and len(address) >= 20

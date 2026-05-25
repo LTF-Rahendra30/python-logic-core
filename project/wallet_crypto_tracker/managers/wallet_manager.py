@@ -18,7 +18,8 @@ def add_wallet(username,coin_type,address,users_list):
         return (False, f"User {clean_username} not found")
 
     # Validate  Wallet
-    coin_valid = validate_coin_type(coin_type)
+    clean_type_coin = coin_type.upper().strip()
+    coin_valid = validate_coin_type(clean_type_coin)
     valid_wallet_address = validate_wallet_address(address)
     wallet_duplicate = check_wallet_duplicate(address,users_list)
 
@@ -54,7 +55,7 @@ def add_wallet(username,coin_type,address,users_list):
         # Wallet Data Stucture:
     new_wallet = {
         "wallet_id" : next_id,
-        "coin_type": coin_type,
+        "coin_type": clean_type_coin,
         "address" : address,
         "balance" : 0.0,
         "create_date": str(date.today()),
@@ -63,6 +64,22 @@ def add_wallet(username,coin_type,address,users_list):
 
     found_user["wallets"].append(new_wallet)
     return (True, f"{coin_type} wallet added to {clean_username}")
+
+
+def get_wallets_by_user(username,users_list):
+    clean_username = username.lower().strip()
+
+    print("================================")
+    print(f"Get wallet by username: {clean_username}")
+
+    found_user = None
+    for user in users_list:
+        if user["username"] == clean_username:
+            found_user = user
+            break
+    if found_user is None:
+        return (False, f"Wallets by user: {clean_username} not found")
+    return (True, found_user["wallets"]) 
 
 
 
