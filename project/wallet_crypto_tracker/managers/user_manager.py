@@ -1,3 +1,5 @@
+
+# Import validators function
 from validators import (
     validate_username,
     validate_email,
@@ -6,6 +8,8 @@ from validators import (
     check_username_duplicate,
 )
 
+# Import clean display
+from display import clean_display_single_user,display_multiple_users
 users = []  # Global data
 
 
@@ -49,16 +53,20 @@ def register_user(username, email, password, users_list):
 
 # Get user by username
 def get_user_by_username(username,users_list):
+    print("================================")
     print(f"Get user by username: {username}")
     clean_username = username.lower().strip()
+    result = []
 
     for user in users_list:
         if user["username"] == clean_username:
-            return True,user
-        else:
-            return False, f"Not users found for username {clean_username}"
+            result.append(user)
+    if result:
+        return True, clean_display_single_user(user)
+    else:
+        return False, f"Not users found for username {clean_username}"
         
 
 # Get All Users
 def get_all_users(users_list):
-    return users_list
+    return display_multiple_users(users_list)
