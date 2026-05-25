@@ -1,7 +1,7 @@
 
 
 # Clean Display Function
-def clean_display_single_user(user):
+def display_single_user(user):
     print(f"""
 Username: {user['username']}
 Email: {user['email']}
@@ -18,4 +18,4 @@ def display_multiple_users(users_list):
     print("==== ALL USERS ====")
 
     for user in users_list:
-        clean_display_single_user(user)
+        display_single_user(user)

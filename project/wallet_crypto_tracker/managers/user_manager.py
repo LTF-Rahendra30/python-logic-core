@@ -9,7 +9,7 @@ from validators import (
 )
 
 # Import clean display
-from display import clean_display_single_user,display_multiple_users
+from display import display_single_user,display_multiple_users
 users = []  # Global data
 
 
@@ -62,7 +62,7 @@ def get_user_by_username(username,users_list):
         if user["username"] == clean_username:
             result.append(user)
     if result:
-        return True, clean_display_single_user(user)
+        return True, display_single_user(user)
     else:
         return False, f"Not users found for username {clean_username}"
         
