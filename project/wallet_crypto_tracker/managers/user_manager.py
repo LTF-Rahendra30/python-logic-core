@@ -17,7 +17,7 @@ users = []  # Global data
 def register_user(username, email, password, users_list):
     clean_username = username.strip().lower()
     username_valid = validate_username(clean_username)
-    username_check = check_username_duplicate(username, users_list)
+    username_check = check_username_duplicate(clean_username, users_list)
     email_format = validate_email(email)
     email_check = check_email_duplicate(email, users_list)
     password_valid = validate_password(password)
