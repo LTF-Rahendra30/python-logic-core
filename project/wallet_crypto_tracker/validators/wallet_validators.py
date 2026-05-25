@@ -1,8 +1,8 @@
 def validate_coin_type(coin_type):
     return coin_type in ["Bitcoin", "Ethereum", "Solana"]
 
-def validate_wallet_addres(addres):
-    return len(addres) >= 20
+def validate_wallet_address(address):
+    return address != "" and len(address) >= 20
 
 def check_wallet_duplicate(address,users_list):
     for user in users_list:
