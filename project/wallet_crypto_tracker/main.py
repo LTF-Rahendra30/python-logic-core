@@ -13,4 +13,5 @@ print(get_wallets_by_user("joko",users))
 print("\n")
 
 print(get_wallet_by_id("joko",2,users))
+print(get_wallet_by_id("joko",4,users))
 print(get_wallet_by_id("bahlil",3,users))

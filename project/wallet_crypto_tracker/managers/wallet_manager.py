@@ -104,6 +104,6 @@ def get_wallet_by_id(username,wallet_id,users_list):
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
             return True, wallet
-    return False, "Note found!"
+    return False, "Not found!"
 
     
