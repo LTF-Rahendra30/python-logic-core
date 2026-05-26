@@ -2,7 +2,7 @@ from validators.user_validators import validate_username,validate_password
 
 from managers.user_manager import register_user,get_user_by_username,get_all_users,users
 
-from managers import add_wallet,get_wallets_by_user,get_wallet_by_id
+from managers import add_wallet,get_wallets_by_user,get_wallet_by_id,calculate_user_total_balance
 # print(validate_username(" "))
 # print(validate_password("1231dsddsddadawd"))
 
@@ -12,6 +12,4 @@ print(add_wallet("joko","solana","22eeb3987abe3345cc231fffcdee337efb2",users))
 print(get_wallets_by_user("joko",users))
 print("\n")
 
-print(get_wallet_by_id("joko",2,users))
-print(get_wallet_by_id("joko",4,users))
-print(get_wallet_by_id("bahlil",3,users))
+print(calculate_user_total_balance("joko",users))

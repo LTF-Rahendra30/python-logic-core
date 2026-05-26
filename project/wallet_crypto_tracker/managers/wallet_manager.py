@@ -106,6 +106,7 @@ def get_wallet_by_id(username,wallet_id,users_list):
             return True, wallet
     return False, "Not found!"
 
+# Calculate total balance wallet
 def calculate_user_total_balance(username,users_list):
     clean_username = username.lower().strip()
     print("================================")
@@ -121,6 +122,7 @@ def calculate_user_total_balance(username,users_list):
     if found_user is None:
         return (False, f"Wallets by user: {clean_username} not found")
     
+    # Calculate total balance
     total_balance = 0.0
     for wallet in found_user["wallets"]:
         total_balance += wallet["balance"]
