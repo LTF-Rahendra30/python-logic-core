@@ -1,6 +1,6 @@
 from validators import validate_wallet_address,validate_balance,validate_coin_type,check_wallet_duplicate
 
-from display import display_single_wallet
+from display import display_single_wallet,display_user_total_balance,display_wallet_by_id,display_multiple_wallets
 
 from datetime import date
 
@@ -82,7 +82,7 @@ def get_wallets_by_user(username,users_list):
             break
     if found_user is None:
         return (False, f"Wallets by user: {clean_username} not found")
-    return (True, found_user["wallets"]) 
+    return (True, display_single_wallet(found_user["wallets"])) 
 
 
 # Get wallet by ID

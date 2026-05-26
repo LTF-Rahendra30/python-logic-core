@@ -20,3 +20,18 @@ def display_multiple_wallets(wallets):
 
     for user in wallets:
         display_multiple_wallets(user)
+
+def display_wallet_by_id(wallet_id,wallet):
+    print("================================")
+    print(f"Get wallet ID: {wallet_id}")
+    print("================================")
+    display_single_wallet(wallet)
+
+def display_user_total_balance(username,total_balance):
+    print("================================")
+    print(f"Total Balance for {username}")
+    print("================================")
+    print(f"Total Balance: {total_balance}")
+    print("================================")
+
+
