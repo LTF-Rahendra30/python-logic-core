@@ -2,7 +2,6 @@
     
 def display_single_wallet(wallet):
     print(f"""
-
      "Wallet_id": {wallet['wallet_id']},
      "Coin_type": {wallet['coin_type']},
      "Address" : {wallet['address']},
