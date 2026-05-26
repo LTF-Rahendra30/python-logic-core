@@ -11,3 +11,12 @@ def display_single_wallet(wallet):
      "Transaction": {wallet['transaction']}
     ____________________________
 """)
+
+def display_multiple_wallets(wallets):
+    if not wallets:
+        print("No wallet found")
+        return
+    print("==== ALL USERS ====")
+
+    for user in wallets:
+        display_multiple_wallets(user)
