@@ -1,3 +1,3 @@
-from managers.wallet_manager import add_wallet,get_wallets_by_user,get_wallet_by_id
+from managers.wallet_manager import add_wallet,get_wallets_by_user,get_wallet_by_id,calculate_user_total_balance
 
 from managers.user_manager import register_user,get_all_users,get_user_by_username

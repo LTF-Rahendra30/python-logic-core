@@ -59,7 +59,7 @@ def add_wallet(username,coin_type,address,users_list):
         "wallet_id" : next_id,
         "coin_type": clean_type_coin,
         "address" : address,
-        "balance" : 0.0,
+        "balance" : 0.1,
         "create_date": str(date.today()),
         "transaction": []
     }
@@ -106,4 +106,22 @@ def get_wallet_by_id(username,wallet_id,users_list):
             return True, wallet
     return False, "Not found!"
 
+def calculate_user_total_balance(username,users_list):
+    clean_username = username.lower().strip()
+    print("================================")
+    print(f"Total Balance wallet by username: {clean_username}")
+
+    # User chek, whether there is or not
+    found_user = None
+    for user in users_list:
+        if user["username"] == clean_username:
+            found_user = user
+            break
+            
+    if found_user is None:
+        return (False, f"Wallets by user: {clean_username} not found")
     
+    total_balance = 0.0
+    for wallet in found_user["wallets"]:
+        total_balance += wallet["balance"]
+    return True, total_balance
