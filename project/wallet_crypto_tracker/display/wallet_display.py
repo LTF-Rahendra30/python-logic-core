@@ -16,10 +16,10 @@ def display_multiple_wallets(wallets):
     if not wallets:
         print("No wallet found")
         return
-    print("==== ALL USERS ====")
+    print("==== ALL WALLETS ====")
 
-    for user in wallets:
-        display_multiple_wallets(user)
+    for wallet in wallets:
+        display_single_wallet(wallet)
 
 def display_wallet_by_id(wallet_id,wallet):
     print("================================")
