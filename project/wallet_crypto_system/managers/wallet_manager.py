@@ -65,7 +65,7 @@ def add_wallet(username,coin_type,address,users_list):
     }
 
     found_user["wallets"].append(new_wallet)
-    return (True, f"{coin_type} wallet added to {clean_username}")
+    return (True, f"{clean_type_coin} wallet added to {clean_username}")
 
 
 # Get wallet by Username

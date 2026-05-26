@@ -14,7 +14,6 @@ def display_single_wallet(wallet):
 def display_multiple_wallets(wallets):
     if not wallets:
         print("No wallet found")
-        return
     print("==== ALL WALLETS ====")
 
     for wallet in wallets:

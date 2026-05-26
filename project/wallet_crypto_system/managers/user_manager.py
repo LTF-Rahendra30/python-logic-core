@@ -10,6 +10,8 @@ from validators import (
 
 # Import clean display
 from display import display_single_user,display_multiple_users
+
+
 users = []  # Global data
 
 
