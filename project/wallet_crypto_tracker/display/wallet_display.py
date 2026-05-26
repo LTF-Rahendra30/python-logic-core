@@ -1,11 +1,13 @@
-def display_wallet(user):
+# def display_wallet(user):
+    
+def display_single_wallet(wallet):
     print(f"""
 
-    "wallet_id": {user['wallet_id']},
-    "coin_type": {user['coin_type']},
-    "address" : {user['address']},
-    "balance" : {user['balance']},
-    "create_date": {user['create_date']},
-    "transaction": {user['transaction']}
-
+     "Wallet_id": {wallet['wallet_id']},
+     "Coin_type": {wallet['coin_type']},
+     "Address" : {wallet['address']},
+     "Balance" : {wallet['balance']},
+     "Create_date": {wallet['create_date']},
+     "Transaction": {wallet['transaction']}
+    ____________________________
 """)

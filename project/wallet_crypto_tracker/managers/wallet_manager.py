@@ -1,6 +1,6 @@
 from validators import validate_wallet_address,validate_balance,validate_coin_type,check_wallet_duplicate
 
-from display import display_wallet
+from display import display_single_wallet
 
 from datetime import date
 
@@ -59,7 +59,7 @@ def add_wallet(username,coin_type,address,users_list):
         "wallet_id" : next_id,
         "coin_type": clean_type_coin,
         "address" : address,
-        "balance" : 0.1,
+        "balance" : 0.0,
         "create_date": str(date.today()),
         "transaction": []
     }
@@ -68,6 +68,7 @@ def add_wallet(username,coin_type,address,users_list):
     return (True, f"{coin_type} wallet added to {clean_username}")
 
 
+# Get wallet by Username
 def get_wallets_by_user(username,users_list):
     clean_username = username.lower().strip()
 
