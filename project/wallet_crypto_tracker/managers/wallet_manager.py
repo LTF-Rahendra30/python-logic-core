@@ -84,12 +84,13 @@ def get_wallets_by_user(username,users_list):
     return (True, found_user["wallets"]) 
 
 
-
+# Get wallet by ID
 def get_wallet_by_id(username,wallet_id,users_list):
     clean_username = username.lower().strip()
     print("================================")
     print(f"Get wallet by Username: {clean_username} ID: {wallet_id}")
 
+    # User chek, whether there is or not
     found_user = None
     for user in users_list:
         if user["username"] == clean_username:
@@ -99,6 +100,7 @@ def get_wallet_by_id(username,wallet_id,users_list):
     if found_user is None:
         return (False, f"Wallets by user: {clean_username} not found")
     
+    # Wallet ID chek, whether there is or not
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
             return True, wallet
