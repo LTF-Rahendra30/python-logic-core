@@ -84,12 +84,15 @@ def get_wallets_by_user(username,users_list):
         return (False, f"Wallets by user: {clean_username} not found")
 
     # Display Multiple wallets
-    return display_multiple_wallets(found_user["wallets"])
+    wallets = found_user["wallets"]
+    display_multiple_wallets(wallets)
+    return (True,"Wallets displayed above")
 
 
 # Get wallet by ID
 def get_wallet_by_id(username,wallet_id,users_list):
     clean_username = username.lower().strip()
+    print("\n")
     print("================================")
     print(f"Get wallet by Username: {clean_username} ID: {wallet_id}")
 
@@ -106,7 +109,8 @@ def get_wallet_by_id(username,wallet_id,users_list):
     # Wallet ID chek, whether there is or not
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
-            return display_wallet_by_id(wallet_id,wallet)
+            display_wallet_by_id(wallet_id,wallet)
+            return (True, "Wallets displayed above")
     return False, "Not found!"
 
 # Calculate total balance wallet
@@ -129,4 +133,5 @@ def calculate_user_total_balance(username,users_list):
     total_balance = 0.0
     for wallet in found_user["wallets"]:
         total_balance += wallet["balance"]
-    return display_user_total_balance(clean_username,total_balance)
+        display_user_total_balance(clean_username,total_balance)
+        return (True, "Total balance displayed above")
