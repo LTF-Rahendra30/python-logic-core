@@ -1,6 +1,6 @@
 from validators import validate_wallet_address,validate_balance,validate_coin_type,check_wallet_duplicate
 
-
+from display import display_wallet
 
 from datetime import date
 
@@ -85,3 +85,23 @@ def get_wallets_by_user(username,users_list):
 
 
 
+def get_wallet_by_id(username,wallet_id,users_list):
+    clean_username = username.lower().strip()
+    print("================================")
+    print(f"Get wallet by Username: {clean_username} ID: {wallet_id}")
+
+    found_user = None
+    for user in users_list:
+        if user["username"] == clean_username:
+            found_user = user
+            break
+            
+    if found_user is None:
+        return (False, f"Wallets by user: {clean_username} not found")
+    
+    for wallet in found_user["wallets"]:
+        if wallet["wallet_id"] == wallet_id:
+            return True, wallet
+    return False, "Note found!"
+
+    

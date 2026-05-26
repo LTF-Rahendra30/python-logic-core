@@ -1,11 +1,11 @@
-def display_wallet(next_id,clean_type_coin,address,balance,date,transaction):
+def display_wallet(user):
     print(f"""
 
-    "wallet_id": {next_id['wallet_id']},
-    "coin_type": {clean_type_coin['coin_type']},
-    "address" : {address['address']},
-    "balance" : {balance['balance']},
-    "create_date": {date['create_date']},
-    "transaction": {transaction['transaction']}
+    "wallet_id": {user['wallet_id']},
+    "coin_type": {user['coin_type']},
+    "address" : {user['address']},
+    "balance" : {user['balance']},
+    "create_date": {user['create_date']},
+    "transaction": {user['transaction']}
 
 """)
