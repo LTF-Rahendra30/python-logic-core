@@ -62,11 +62,12 @@ def get_user_by_username(username,users_list):
     for user in users_list:
         if user["username"] == clean_username:
             display_single_user(user)
-            return True, None
+            return (True,"User displayed above")
     else:
         return False,None, f"Not users found for username {clean_username}"
         
 
 # Get All Users
 def get_all_users(users_list):
-    return display_multiple_users(users_list)
+    display_multiple_users(users_list)
+    return (True, "All Users displayed above")
