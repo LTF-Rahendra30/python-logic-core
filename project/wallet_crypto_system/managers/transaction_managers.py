@@ -23,9 +23,10 @@ def add_transaction(
     # Find wallet
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
-            return (True,wallet)
-        else:
-            return (False, "Wallet Not Found")
+            found_wallet = wallet
+            break
+    if found_wallet is None:
+        return (False, "Wallet Not Found")
 
     # Transaction Data
     valid_tx_type = validate_tx_type(tx_type) 
