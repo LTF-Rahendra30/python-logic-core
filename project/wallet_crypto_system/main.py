@@ -12,5 +12,7 @@ print(add_wallet("joko","BITCOIN","11bbabbc213370099effb32bfe31699",users))
 print(add_wallet("joko","solana","22eeb3987abe3345cc231fffcdee337efb2",users))
 
 print(add_transaction("joko",1,"in",0.1,"From CEX","2026-05-28",users))
+print(add_transaction("joko",1,"in",1,"From CEX","2026-05-28",users))
+print(add_transaction("joko",1,"out",0.5,"Send to bahlil","2026-05-28",users))
 print(get_wallets_by_user("joko",users))
 print(calculate_user_total_balance("joko",users))

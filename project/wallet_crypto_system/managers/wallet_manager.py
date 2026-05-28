@@ -83,9 +83,12 @@ def get_wallets_by_user(username,users_list):
     if found_user is None:
         return (False, f"Wallets by user: {clean_username} not found")
 
+    # Update every transaction wallet before display
+    for wallet in found_user["wallets"]:
+        wallet["balance"] = get_wallet_balance(wallet)
     # Display Multiple wallets
-    wallets = found_user["wallets"]
-    display_multiple_wallets(wallets)
+    display_wallets = found_user["wallets"]
+    display_multiple_wallets(found_user["wallets"])
     return (True,"Wallets displayed above")
 
 
