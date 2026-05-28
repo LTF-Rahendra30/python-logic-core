@@ -55,5 +55,14 @@ def add_transaction(
                 max_id = tx["tx_id"] # Update max id
         tx_id = max_id +1 
 
+    #  Transaction Structure
+
+    new_transaction = {
+        "tx_id" : tx_id,
+        "type" : valid_tx_type,
+        "amount" : valid_amount,
+        "date" : valid_date,
+        "description" : description
+    }
 
         
