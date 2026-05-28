@@ -88,7 +88,7 @@ def get_wallets_by_user(username,users_list):
         wallet["balance"] = get_wallet_balance(wallet)
     # Display Multiple wallets
     display_wallets = found_user["wallets"]
-    display_multiple_wallets(found_user["wallets"])
+    display_multiple_wallets(display_wallets)
     return (True,"Wallets displayed above")
 
 
@@ -135,7 +135,6 @@ def calculate_user_total_balance(username,users_list):
     # Calculate total balance
     total_balance = 0.0
     for wallet in found_user["wallets"]:
-        wallet_balance = get_wallet_balance(wallet)
-        total_balance += wallet_balance
-        display_user_total_balance(clean_username,total_balance)
-        return (True, "Total balance displayed above")
+        total_balance += wallet["balance"]
+
+    return (True,display_user_total_balance(clean_username,total_balance), "Total balance displayed above")
