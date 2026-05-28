@@ -3,7 +3,7 @@ from validators import validate_wallet_address,validate_balance,validate_coin_ty
 from display import display_single_wallet,display_user_total_balance,display_wallet_by_id,display_multiple_wallets
 
 from datetime import date
-
+from managers.transaction_managers import get_wallet_balance
 # Add wallet
 def add_wallet(username,coin_type,address,users_list):
 
@@ -132,6 +132,7 @@ def calculate_user_total_balance(username,users_list):
     # Calculate total balance
     total_balance = 0.0
     for wallet in found_user["wallets"]:
-        total_balance += wallet["balance"]
+        wallet_balance = get_wallet_balance(wallet)
+        total_balance += wallet_balance
         display_user_total_balance(clean_username,total_balance)
         return (True, "Total balance displayed above")

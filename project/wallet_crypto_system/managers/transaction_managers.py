@@ -34,16 +34,16 @@ def add_transaction(
     valid_date = validate_date(date)
     valid_sufficient_balance = validate_sufficient_balance(tx_type,amount,wallet)
 
-    if not valid_tx_type and valid_amount and valid_date and valid_sufficient_balance:
+    if not (valid_tx_type and valid_amount and valid_date and valid_sufficient_balance):
         validators = {
-            "tx_type" : (not valid_tx_type, "Must be In or Out"),
-            "amount": (not valid_amount, "cant be zero, just positive"),
-            "date": (not valid_date, "Only date format: YYYY-MM-DD"),
-            "sufficient_balance": (not valid_sufficient_balance, "Insufficient balance")
+            "tx_type" : (not valid_tx_type, "TRANSACTION TYPE: Must be In or Out"),
+            "amount": (not valid_amount, "AMOUNT: cant be zero, just positive"),
+            "date": (not valid_date, "DATE: Only date format: YYYY-MM-DD"),
+            "sufficient_balance": (not valid_sufficient_balance, "BALANCE: Insufficient balance")
         }
         for _, (is_error,error_msg) in validators.items():
             if is_error:
-                return False,error_msg
+                return (False,error_msg)
             
     # Calculate Wallet next ID Transaction
     if not found_wallet["transaction"]: 
@@ -68,3 +68,12 @@ def add_transaction(
     found_wallet["transaction"].append(new_transaction)
     return (True,f"Transaction Success added, Transaction id: {tx_id}")
         
+# Calculate wallet balance from transaction
+def get_wallet_balance(wallet):
+    balance = 0.0
+    for tx in wallet["transaction"]:
+        if tx["type"] == "in":
+            balance += tx["amount"]
+        if tx["type"] == "out":
+            balance -= tx["amount"]
+    return balance
