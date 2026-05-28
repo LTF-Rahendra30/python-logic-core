@@ -17,7 +17,7 @@ def validate_date(date):
             return False
         
     # Check date  format
-    if len(part[0]) != 4 or len(part[1]) != 2 or len(part[2]) != 2:
+    if len(parts[0]) != 4 or len(parts[1]) != 2 or len(parts[2]) != 2:
         return False
     
     return True
