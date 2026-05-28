@@ -30,7 +30,7 @@ def validate_sufficient_balance(tx_type,amount,wallet):
     current_balance = 0.0
     for tx in wallet["transaction"]:
         if tx["type"] == "in":
-            current_balance += amount
+            current_balance += tx["amount"]
         else:
-            current_balance -= amount
-    return current_balance >= amount
+            current_balance -= tx["amount"]
+    return current_balance >= amount 

@@ -59,9 +59,9 @@ def add_transaction(
 
     new_transaction = {
         "tx_id" : tx_id,
-        "type" : valid_tx_type,
-        "amount" : valid_amount,
-        "date" : valid_date,
+        "type" : tx_type,
+        "amount" : amount,
+        "date" : date,
         "description" : description
     }
 
