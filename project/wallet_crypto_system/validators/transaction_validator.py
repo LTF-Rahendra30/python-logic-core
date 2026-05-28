@@ -26,6 +26,7 @@ def validate_sufficient_balance(tx_type,amount,wallet):
     if tx_type == "in":
         return True
     
+    
     current_balance = 0.0
     for tx in wallet["transaction"]:
         if tx["type"] == "in":
