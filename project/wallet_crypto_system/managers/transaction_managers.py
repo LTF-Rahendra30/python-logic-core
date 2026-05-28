@@ -28,7 +28,23 @@ def add_transaction(
     if found_wallet is None:
         return (False, "Wallet Not Found")
 
-    # Transaction Data
-    valid_tx_type = validate_tx_type(tx_type) 
+    # Transaction Data validator
+    valid_tx_type = validate_tx_type(tx_type)
+    valid_amount = validate_amount(amount)
+    valid_date = validate_date(date)
+    valid_sufficient_balance = validate_sufficient_balance(tx_type,amount,wallet)
+
+    if not valid_tx_type and valid_amount and valid_date and valid_sufficient_balance:
+        validators = {
+            "tx_type" : (not valid_tx_type, "Must be In or Out"),
+            "amount": (not valid_amount, "cant be zero, just positive"),
+            "date": (not valid_date, "Only date format: YYYY-MM-DD"),
+            "sufficient_balance": (not valid_sufficient_balance, "Insufficient balance")
+        }
+        for _, (is_error,error_msg) in validators.items():
+            if is_error:
+                return False,error_msg
+            
+
 
         
