@@ -65,4 +65,6 @@ def add_transaction(
         "description" : description
     }
 
+    found_wallet["transaction"].append(new_transaction)
+    return (True,f"Transaction Success added, Transaction id: {tx_id}")
         
