@@ -45,6 +45,15 @@ def add_transaction(
             if is_error:
                 return False,error_msg
             
+    # Calculate Wallet next ID Transaction
+    if not found_wallet["transaction"]: 
+        tx_id = 1 # First transaction ID strat from 1
+    else:
+        max_id = 0 # Strart tracking from 0
+        for tx in found_wallet["transaction"]: 
+            if tx["tx_id"] > max_id: # If found ID than greater
+                max_id = tx["tx_id"] # Update max id
+        tx_id = max_id +1 
 
 
         
