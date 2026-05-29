@@ -1,3 +1,5 @@
+import hashlib
+
 from typing import Tuple, Any # Import tuple class
 
 from validators import (
@@ -58,9 +60,18 @@ def add_transaction(
                 max_id = tx["tx_id"] # Update max id
         tx_id = max_id +1 
 
-    #  Transaction Structure
 
+    # Encryption Transaction Data with sha256 before append new transacction
+
+    data_transaction = f"{username}, {wallet_id},{tx_type}, {amount}, {description}, {date}"
+    tranfrom_byte = data_transaction.encode('utf-8')
+
+    hash_encryption = hashlib.sha256(tranfrom_byte)
+    hash_transaction = hash_encryption.hexdigest()
+
+    #  Transaction Structure
     new_transaction = {
+        "transaction_hash": hash_transaction,
         "tx_id" : tx_id,
         "type" : tx_type,
         "amount" : amount,
@@ -69,8 +80,7 @@ def add_transaction(
     }
 
     found_wallet["transaction"].append(new_transaction)
-    return (True,f"Transaction Success added, Transaction id: {tx_id}")
-        
+    return (True,f"Transaction Success added, Transaction id: {tx_id}")    
 # Calculate wallet balance from transaction
 def get_wallet_balance(wallet):
     balance = 0.0
@@ -118,3 +128,5 @@ def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
             filtered.append(tx)
     return (True, f"Transaction by type: {tx_type}: ",filtered)
 
+# A function who filtered by date
+# def filter_transactions_by_date(username,wallet_id,start_date,end_date):
