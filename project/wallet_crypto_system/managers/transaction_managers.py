@@ -77,3 +77,23 @@ def get_wallet_balance(wallet):
         if tx["type"] == "out":
             balance -= tx["amount"]
     return balance
+
+def get_transaction(username,wallet_id,users_list):
+    clean_username = username.strip().lower()
+    found_user = None
+    # Find username
+    for user in users_list:
+        if user["username"] == clean_username:
+            found_user = user
+            break
+    
+    if found_user is None:
+        return (False, f"User {clean_username} not found")
+    
+     # Find wallet
+    for wallet in found_user["wallets"]:
+        if wallet["wallet_id"] == wallet_id:
+            found_wallet = wallet
+            break
+    if found_wallet is None:
+        return (False, "Wallet Not Found")
