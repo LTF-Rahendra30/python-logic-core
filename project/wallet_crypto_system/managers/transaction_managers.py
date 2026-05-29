@@ -1,3 +1,5 @@
+from typing import Tuple, Any # Import tuple class
+
 from validators import (
     validate_tx_type,
     validate_amount,
@@ -80,7 +82,7 @@ def get_wallet_balance(wallet):
     return balance
 
 # A function who get transaction by wallet ID
-def get_transaction(username,wallet_id,users_list):
+def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
     clean_username = username.strip().lower()
     found_user = None
     # Find username
