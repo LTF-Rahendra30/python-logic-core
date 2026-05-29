@@ -140,3 +140,26 @@ def filter_transactions_by_date(username,wallet_id,start_date,end_date,users_lis
             filtered_date.append(tx)
     return (True, f"Transaction by date {start_date} to {end_date}: {filtered_date}")
             
+# A function who filtered transaction by hash
+def filter_transaction_by_hash(username,hash_transaction,users_list):
+    clean_username = username.strip().lower()
+    found_user = None
+    # Find username
+    for user in users_list:
+        if user["username"] == clean_username:
+            found_user = user
+            break
+    
+    if found_user is None:
+        return (False, f"User {clean_username} not found")
+    
+    # Find Hash
+    found_transaction = None
+    for hash in hash_transaction:
+        if hash["transaction_hash"] == hash_transaction:
+            found_transaction = hash
+            break
+    if found_transaction is None:
+        return (False,"Transaction not found")
+    return (True, found_transaction["transaction"])
+    
