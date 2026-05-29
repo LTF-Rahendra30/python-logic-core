@@ -2,4 +2,4 @@ from managers.wallet_manager import add_wallet,get_wallets_by_user,get_wallet_by
 
 from managers.user_manager import register_user,get_all_users,get_user_by_username,users
 
-from managers.transaction_managers import add_transaction
+from managers.transaction_managers import add_transaction,get_transaction

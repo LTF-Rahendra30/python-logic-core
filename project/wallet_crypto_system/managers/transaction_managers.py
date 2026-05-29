@@ -93,7 +93,6 @@ def get_transaction(username,wallet_id,users_list):
      # Find wallet
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
-            found_wallet = wallet
-            break
-    if found_wallet is None:
-        return (False, "Wallet Not Found")
+            return wallet["transaction"]
+        
+    return (False, "Wallet Not Found")
