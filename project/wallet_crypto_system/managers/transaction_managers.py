@@ -21,6 +21,7 @@ def add_transaction(
         return (False, f"User {clean_username} not found")
     
     # Find wallet
+    found_wallet = None
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
             found_wallet = wallet
@@ -92,16 +93,23 @@ def get_transaction(username,wallet_id,users_list):
         return (False, f"User {clean_username} not found")
     
      # Find wallet
+    found_wallet = None
     for wallet in found_user["wallets"]:
         if wallet["wallet_id"] == wallet_id:
-            return wallet["transaction"]
-        
-    return (False, "Wallet Not Found")
+            found_wallet = wallet
+            break
+    if found_wallet is None:
+        return (False, "Wallet Not Found")
+    
+    return(True, found_wallet["transaction"])
 
 # A funnction who filter transaction by type
 def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
-    history_trx = get_transaction(username,wallet_id,users_list)
-    
+    success, history_trx = get_transaction(username,wallet_id,users_list)
+
+    if not success:
+        return (False, history_trx)
+
     filtered = []
     for tx in history_trx:
         if tx["type"] == tx_type:
