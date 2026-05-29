@@ -3,7 +3,7 @@ from managers import register_user,get_user_by_username,get_all_users,users
 
 from managers import add_wallet,get_wallets_by_user,get_wallet_by_id,calculate_user_total_balance
 
-from managers import add_transaction,get_transaction
+from managers import add_transaction,get_transaction,filter_transactions_by_type
 
 print(register_user("joko","joko@mail.com","joko1234567",users))
 
@@ -17,4 +17,5 @@ print(add_transaction("joko",1,"out",0.5,"Send to bahlil","2026-05-28",users))
 print(add_transaction("joko",2,"in",0.3,"from bahlil","2026-05-28",users))
 print(get_wallets_by_user("joko",users))
 print(calculate_user_total_balance("joko",users))
-print(get_transaction("joko",1,users))
+print(get_transaction("joko",2,users))
+print(filter_transactions_by_type("joko",1,"in",users))
