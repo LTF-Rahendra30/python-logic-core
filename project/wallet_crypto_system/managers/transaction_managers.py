@@ -78,6 +78,7 @@ def get_wallet_balance(wallet):
             balance -= tx["amount"]
     return balance
 
+# A function who get transaction by wallet ID
 def get_transaction(username,wallet_id,users_list):
     clean_username = username.strip().lower()
     found_user = None
@@ -96,3 +97,14 @@ def get_transaction(username,wallet_id,users_list):
             return wallet["transaction"]
         
     return (False, "Wallet Not Found")
+
+# A funnction who filter transaction by type
+def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
+    history_trx = get_transaction(username,wallet_id,users_list)
+    
+    filtered = []
+    for tx in history_trx:
+        if tx["type"] == tx_type:
+            filtered.append(tx)
+    return (True, filtered)
+
