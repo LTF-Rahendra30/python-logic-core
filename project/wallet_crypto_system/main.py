@@ -17,6 +17,8 @@ print(add_transaction("joko",1,"out",0.5,"Send to bahlil","2026-05-31",users))
 print(add_transaction("joko",2,"in",0.3,"from bahlil","2026-05-31",users))
 print(get_wallets_by_user("joko",users))
 print(filter_transaction_by_hash("joko","0x98244ed11025aa466d9fb37e0b6a8fab36c91c736e42d08f9ef7c0ffb4ca5af0",users))
+
+
 # print(calculate_user_total_balance("joko",users))
 # print(get_transaction("joko",2,users))
 # print(filter_transactions_by_type("joko",1,"out",users))

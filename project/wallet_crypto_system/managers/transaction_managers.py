@@ -152,14 +152,31 @@ def filter_transaction_by_hash(username,hash_transaction,users_list):
     
     if found_user is None:
         return (False, f"User {clean_username} not found")
-    
-    # Find Hash
+    # Found wallet
+    found_wallet = None
     found_transaction = None
-    for hash in hash_transaction:
-        if hash["transaction_hash"] == hash_transaction:
-            found_transaction = hash
-            break
-    if found_transaction is None:
-        return (False,"Transaction not found")
-    return (True, found_transaction["transaction"])
+    for wallet in found_user["wallets"]:
+        # if wallet["transaction"]:
+        for trx in wallet["transaction"]:
+            if trx["transaction_hash"] == hash_transaction:
+                found_transaction = trx
+                break
+        if found_transaction is None:
+            return(False, "Transaction not found")
+    if found_wallet is None:
+        return (False, "Wallet Not Found")
+    
+    return(True,found_wallet["transaction"])
+
+
+                
+
+    # # Find Hash
+    # for hash in hash_transaction:
+    #     if hash["transaction_hash"] == hash_transaction:
+    #         found_transaction = hash
+    #         break
+    # if found_transaction is None:
+    #     return (False,"Transaction not found")
+    # return (True, found_transaction["transaction"])
     
