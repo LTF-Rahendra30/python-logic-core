@@ -120,11 +120,23 @@ def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
     if not success:
         return (False, history_trx)
 
-    filtered = []
+    filtered_type = []
     for tx in history_trx:
         if tx["type"] == tx_type:
-            filtered.append(tx)
-    return (True, f"Transaction by type: {tx_type}: ",filtered)
+            filtered_type.append(tx)
+    return (True, f"Transaction by type: {tx_type}: ",filtered_type)
 
 # A function who filtered by date
-# def filter_transactions_by_date(username,wallet_id,start_date,end_date):
+def filter_transactions_by_date(username,wallet_id,start_date,end_date,users_list):
+    # Get transaction history
+    success, history_trx = get_transaction(username,wallet_id,users_list)
+
+    if not success:
+        return (False, history_trx)
+    
+    filtered_date = []
+    for tx in history_trx:
+        if start_date <= tx["date"] <= end_date:
+            filtered_date.append(tx)
+    return (True, f"Transaction by date {start_date} to {end_date}: {filtered_date}")
+            
