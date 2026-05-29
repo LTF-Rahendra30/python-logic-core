@@ -64,9 +64,8 @@ def add_transaction(
     # Encryption Transaction Data with sha256 before append new transacction
 
     data_transaction = f"{username}, {wallet_id},{tx_type}, {amount}, {description}, {date}"
-    tranfrom_byte = data_transaction.encode('utf-8')
 
-    hash_encryption = hashlib.sha256(tranfrom_byte)
+    hash_encryption = hashlib.sha256(data_transaction .encode('utf-8'))
     hash_transaction = hash_encryption.hexdigest()
 
     #  Transaction Structure
