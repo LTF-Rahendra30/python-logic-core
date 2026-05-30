@@ -121,7 +121,7 @@ def get_transaction(username,wallet_id,users_list):
     success, data = get_transaction_data(username,wallet_id,users_list)
 
     if not success:
-        return False, data
+        return (False, data)
     print(f"======= Transaction by Username:{username} & Wallet: {wallet_id}")
     display_transaction_history(data)
     return(True,data)
@@ -158,7 +158,8 @@ def filter_transactions_by_date(username,wallet_id,start_date,end_date,users_lis
     return (True,"Filtered transactions displayed")
             
 # A function who filtered transaction by hash
-def filter_transaction_by_hash(username,hash_transaction,users_list):
+# Internal function - get data only
+def get_transaction_by_hash(username,hash_transaction,users_list):
     clean_username = username.strip().lower()
     found_user = None
     # Find username
@@ -177,3 +178,15 @@ def filter_transaction_by_hash(username,hash_transaction,users_list):
                 found_transaction = trx
                 return(True,found_transaction)
     return (False, "Transaction not found")
+
+# Public display transaction by Hash
+def filter_transaction_by_hash(username,hash_transaction,users_list):
+    success, transaction = get_transaction_by_hash(username,hash_transaction,users_list)
+
+    if not success:
+        print(f"Error: {transaction}")
+        return(False, transaction)
+    
+    print(f"======== Transaction by hash: {hash_transaction} ========")
+    display_single_transaction(transaction)
+    return(True,transaction)
