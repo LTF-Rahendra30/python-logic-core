@@ -114,9 +114,9 @@ def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
     if found_wallet is None:
         return (False, "Wallet Not Found")
     # Display the transaction
+    print(f"Transaction by Usename: {clean_username} & Wallet ID: {wallet_id}")
     display_wallet = found_wallet["transaction"]
-    display_transaction_history
-    (display_wallet)
+    display_transaction_history(display_wallet)
     return(True,display_wallet)
 
 # A funnction who filter transaction by type
@@ -130,7 +130,7 @@ def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
     for tx in history_trx:
         if tx["type"] == tx_type:
             filtered_type.append(tx)
-    print(f"======== Transaction by type: {tx_type} ========")
+    print(f"======== Transaction by type: {tx_type} wallet ID: {wallet_id} ========")
     display_transaction_history(filtered_type)
     return (True, "Filtered transactions displayed")
 
