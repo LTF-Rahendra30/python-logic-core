@@ -1,16 +1,20 @@
-# def display_wallet(user):
-    
+from display.transaction_display import display_single_transaction_simple
 def display_single_wallet(wallet):
     print(f"""
-     "Wallet_id": {wallet['wallet_id']},
-     "Coin_type": {wallet['coin_type']},
-     "Address" : {wallet['address']},
-     "Balance" : {wallet['balance']},
-     "Create_date": {wallet['create_date']},
-     "Transaction": {wallet['transaction']}
+     "Wallet_id": {wallet['wallet_id']}
+     "Coin_type": {wallet['coin_type']}
+     "Address" : {wallet['address']}
+     "Balance" : {wallet['balance']}
+     "Create_date": {wallet['create_date']}
     ____________________________
 """)
-
+    #  Check Transaction
+    if wallet['transaction']:
+        print( "Transaction:")
+        for tx in wallet['transaction']:
+            display_single_transaction_simple(tx)
+        else:
+            print(" No Transaction yet")
 def display_multiple_wallets(wallets):
     if not wallets:
         print("No wallet found")
