@@ -20,4 +20,9 @@ def display_single_transaction(transaction):
     """)
 
 # Display multiple transaction with hash
-def display_transaction_history()
+def display_transaction_history(transaction):
+    if not transaction:
+        print("No transaction")
+    print("=== TRANSACTION HISTORY ===\n")
+    for tx in transaction:
+        display_single_transaction(tx)
