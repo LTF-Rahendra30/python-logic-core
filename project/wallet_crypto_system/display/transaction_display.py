@@ -1,5 +1,5 @@
 
-def display_single_transaction(transaction):
+def display_single_transaction_simple(transaction):
     print(f"""
     TX ID: {transaction['tx_id']}
     Type: {transaction['type']}
@@ -13,8 +13,7 @@ def display_transaction_history(transaction):
         print("No transactions")
     
     print("=== TRANSACTION HISTORY ===\n")
-    for tx in transaction:
-        print(f"""
+    print(f"""
     Transaction Hash: {transaction['transaction_hash']}
     TX ID: {transaction['tx_id']}
     Type: {transaction['type']}

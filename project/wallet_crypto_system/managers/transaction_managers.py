@@ -9,7 +9,7 @@ from validators import (
     validate_date,
 )
 
-from display import display_single_transaction,display_transaction_history
+from display import display_single_transaction_simple,display_transaction_history
 
 def add_transaction(
     username, wallet_id,tx_type, amount, description, date, users_list
@@ -80,7 +80,7 @@ def add_transaction(
 
     found_wallet["transaction"].append(new_transaction)
 
-    display_single_transaction(new_transaction)
+    display_single_transaction_simple(new_transaction)
     return (True,f"Transaction Success added, Transaction id: {tx_id}")    
 # Calculate wallet balance from transaction
 def get_wallet_balance(wallet):
