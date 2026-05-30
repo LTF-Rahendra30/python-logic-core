@@ -1,4 +1,4 @@
-from display.transaction_display import display_single_transaction_simple
+from display.transaction_display import display_single_transaction
 def display_single_wallet(wallet):
     print(f"""
      "Wallet_id": {wallet['wallet_id']}
@@ -12,7 +12,7 @@ def display_single_wallet(wallet):
     if wallet['transaction']:
         print( "Transaction:")
         for tx in wallet['transaction']:
-            display_single_transaction_simple(tx)
+            display_single_transaction(tx)
         else:
             print(" No Transaction yet")
 def display_multiple_wallets(wallets):
