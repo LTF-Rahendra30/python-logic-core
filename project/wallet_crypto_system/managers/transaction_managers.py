@@ -9,7 +9,7 @@ from validators import (
     validate_date,
 )
 
-from display import display_single_transaction_simple,display_transaction_history
+from display import display_single_transaction_simple,display_single_transaction,display_transaction_history
 
 def add_transaction(
     username, wallet_id,tx_type, amount, description, date, users_list
@@ -115,7 +115,7 @@ def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
         return (False, "Wallet Not Found")
     # Display the transaction
     display_wallet = found_wallet["transaction"]
-    display_transaction_history(display_wallet)
+    display_single_transaction(display_wallet)
     return(True,"Transaction displayed above")
 
 # A funnction who filter transaction by type
@@ -129,7 +129,9 @@ def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
     for tx in history_trx:
         if tx["type"] == tx_type:
             filtered_type.append(tx)
-    return (True, f"Transaction by type: {tx_type}: ",filtered_type)
+    print(f"======== Transaction by type: {tx_type} ========")
+    display_transaction_history(filtered_type)
+    return (True, "Filtered transactions displayed")
 
 # A function who filtered by date
 def filter_transactions_by_date(username,wallet_id,start_date,end_date,users_list):
@@ -143,7 +145,9 @@ def filter_transactions_by_date(username,wallet_id,start_date,end_date,users_lis
     for tx in history_trx:
         if start_date <= tx["date"] <= end_date:
             filtered_date.append(tx)
-    return (True, f"Transaction by date {start_date} to {end_date}: {filtered_date}")
+    print(f"======== Transaction by date {start_date} to {end_date} ========")
+    display_transaction_history(filtered_date)
+    return (True,"Filtered transactions displayed")
             
 # A function who filtered transaction by hash
 def filter_transaction_by_hash(username,hash_transaction,users_list):
