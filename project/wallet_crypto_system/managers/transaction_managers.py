@@ -115,7 +115,8 @@ def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
         return (False, "Wallet Not Found")
     # Display the transaction
     display_wallet = found_wallet["transaction"]
-    display_single_transaction(display_wallet)
+    display_transaction_history
+    (display_wallet)
     return(True,display_wallet)
 
 # A funnction who filter transaction by type

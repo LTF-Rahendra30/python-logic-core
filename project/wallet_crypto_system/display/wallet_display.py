@@ -13,8 +13,8 @@ def display_single_wallet(wallet):
         print( "Transaction:")
         for tx in wallet['transaction']:
             display_single_transaction(tx)
-        else:
-            print(" No Transaction yet")
+    else:
+        print(" No Transaction yet")
 def display_multiple_wallets(wallets):
     if not wallets:
         print("No wallet found")
