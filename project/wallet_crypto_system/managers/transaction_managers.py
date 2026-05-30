@@ -9,7 +9,7 @@ from validators import (
     validate_date,
 )
 
-from display import display_single_transaction
+from display import display_single_transaction,display_transaction_history
 
 def add_transaction(
     username, wallet_id,tx_type, amount, description, date, users_list
@@ -113,8 +113,10 @@ def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
             break
     if found_wallet is None:
         return (False, "Wallet Not Found")
-    
-    return(True,found_wallet["transaction"])
+    # Display the transaction
+    display_wallet = found_wallet["transaction"]
+    display_transaction_history(display_wallet)
+    return(True,"Transaction displayed above")
 
 # A funnction who filter transaction by type
 def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
