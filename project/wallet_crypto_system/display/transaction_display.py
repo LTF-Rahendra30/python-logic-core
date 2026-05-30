@@ -9,7 +9,7 @@ def display_single_transaction_simple(transaction):
 """)
     
 # Display Transaction with hash
-def display_transaction_history(transaction):
+def display_single_transaction(transaction):
     print(f"""
     Transaction Hash: {transaction['transaction_hash']}
     TX ID: {transaction['tx_id']}
@@ -18,3 +18,6 @@ def display_transaction_history(transaction):
     Date: {transaction['date']}
     Description: {transaction['description']}
     """)
+
+# Display multiple transaction with hash
+def display_transaction_history()
