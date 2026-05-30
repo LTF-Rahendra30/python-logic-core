@@ -2,4 +2,4 @@ from display.user_display import display_single_user,display_multiple_users
 
 from display.wallet_display import display_single_wallet,display_multiple_wallets,display_wallet_by_id,display_user_total_balance
 
-from display.transaction_display import display_single_transaction
+from display.transaction_display import display_single_transaction,display_transaction_history

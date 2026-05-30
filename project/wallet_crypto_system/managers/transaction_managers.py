@@ -163,6 +163,3 @@ def filter_transaction_by_hash(username,hash_transaction,users_list):
                 found_transaction = trx
                 return(True,found_transaction)
     return (False, "Transaction not found")
-
-
-
