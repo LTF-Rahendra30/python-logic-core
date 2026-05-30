@@ -93,7 +93,8 @@ def get_wallet_balance(wallet):
     return balance
 
 # A function who get transaction by wallet ID
-def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
+# Internal function - get data only, NO display
+def get_transaction_data(username,wallet_id,users_list) -> Tuple[bool,Any]:
     clean_username = username.strip().lower()
     found_user = None
     # Find username
@@ -113,11 +114,17 @@ def get_transaction(username,wallet_id,users_list) -> Tuple[bool,Any]:
             break
     if found_wallet is None:
         return (False, "Wallet Not Found")
-    # Display the transaction
-    print(f"Transaction by Usename: {clean_username} & Wallet ID: {wallet_id}")
-    display_wallet = found_wallet["transaction"]
-    display_transaction_history(display_wallet)
-    return(True,display_wallet)
+    
+    return(True,found_wallet["transaction"])
+# Public function get transaction
+def get_transaction(username,wallet_id,users_list):
+    success, data = get_transaction_data(username,wallet_id,users_list)
+
+    if not success:
+        return False, data
+    print(f"======= Transaction by Username:{username} & Wallet: {wallet_id}")
+    display_transaction_history(data)
+    return(True,data)
 
 # A funnction who filter transaction by type
 def filter_transactions_by_type(username,wallet_id,tx_type,users_list):
