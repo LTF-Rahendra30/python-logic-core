@@ -64,7 +64,7 @@ def get_user_by_username(username,users_list):
             display_single_user(user)
             return (True,"User displayed above")
     else:
-        return False,None, f"Not users found for username {clean_username}"
+        return (False,f"Not users found for username {clean_username}")
         
 
 # Get All Users

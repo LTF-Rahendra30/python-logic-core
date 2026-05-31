@@ -38,7 +38,7 @@ def add_transaction(
     valid_tx_type = validate_tx_type(tx_type)
     valid_amount = validate_amount(amount)
     valid_date = validate_date(date)
-    valid_sufficient_balance = validate_sufficient_balance(tx_type,amount,wallet)
+    valid_sufficient_balance = validate_sufficient_balance(tx_type,amount,found_wallet)
 
     if not (valid_tx_type and valid_amount and valid_date and valid_sufficient_balance):
         validators = {

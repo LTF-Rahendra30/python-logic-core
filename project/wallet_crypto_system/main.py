@@ -18,7 +18,7 @@ print(add_transaction("joko",1,"out",0.5,"Send to bahlil","2026-05-31",users))
 print(add_transaction("joko",2,"in",0.3,"from bahlil","2026-05-31",users))
 
 # Get Data
-print(get_wallets_by_user("joko",users))
+get_wallets_by_user("joko",users)
 get_transaction("joko",2,users)
 filter_transactions_by_type("joko",1,"out",users)
 filter_transaction_by_hash("joko","0x4c6bed350fe256a5f1303795cd7fa8a4cac5c79d702a137f8036cbc41f88beca",users)
