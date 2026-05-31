@@ -135,6 +135,7 @@ def calculate_user_total_balance(username,users_list):
     # Calculate total balance
     total_balance = 0.0
     for wallet in found_user["wallets"]:
+        wallet["balance"] = get_wallet_balance(wallet)
         total_balance += wallet["balance"]
 
     return (True,display_user_total_balance(clean_username,total_balance), "Total balance displayed above")
