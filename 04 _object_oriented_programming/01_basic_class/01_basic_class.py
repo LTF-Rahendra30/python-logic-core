@@ -11,3 +11,7 @@ class Car:
     def car_info(self,add_speed):
         self.max_speed += add_speed
         return (True, f"Car {self.merk} , now speed: {self.max_speed} km/h")
+
+    def transfer_owner(self,new_owner,city):
+        return (True, f"Car: {self.merk} {self.color}, New owner: {new_owner}, city: {city} ")
+        
