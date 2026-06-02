@@ -18,11 +18,16 @@ class SuperCar:
     def transfer_owner(self,new_owner,city):
         return (True, f"Car: {self.merk} {self.color}, New owner: {new_owner}, city: {city} ")
     
-    def buy_my_car(self,your_money,age):
+    def buy_my_car(self,your_money,age,new_owner_name,city):
         if your_money < self.price:
             return (False, "You dont have enough money")
+        elif your_money > self.price:
+            payment = your_money -  self.price
+            return (True, f"Your return: {payment}")
         elif age < 18:
-            return(False,"You're not old enough")        
+            return(False,"You're not old enough")
+        valid_buyer = self.transfer_owner(new_owner_name,city)
+        return (True,f"Success {valid_buyer}")      
 # Create Object
 
 my_car = SuperCar("McLeren", "Grey")
