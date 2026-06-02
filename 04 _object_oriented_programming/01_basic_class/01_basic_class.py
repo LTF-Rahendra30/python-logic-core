@@ -6,6 +6,7 @@ class SuperCar:
         self.merk = merk
         self.color = color
         self.max_speed = 0
+        self.price = 500.000 
 
     # Method
     def car_speed(self,add_speed):
@@ -16,7 +17,12 @@ class SuperCar:
 
     def transfer_owner(self,new_owner,city):
         return (True, f"Car: {self.merk} {self.color}, New owner: {new_owner}, city: {city} ")
-        
+    
+    def buy_my_car(self,your_money,age):
+        if your_money < self.price:
+            return (False, "You dont have enough money")
+        elif age < 18:
+            return(False,"You're not old enough")        
 # Create Object
 
 my_car = SuperCar("McLeren", "Grey")
