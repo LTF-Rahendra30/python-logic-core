@@ -1,6 +1,6 @@
 
 # The Class of Car
-class Car:
+class SuperCar:
     # Artibute of the Car
     def __init__(self,merk,color):
         self.merk = merk
@@ -9,6 +9,8 @@ class Car:
 
     # Method
     def car_speed(self,add_speed):
+        if add_speed <= 200:
+            return(False, f"This isn't a Super Car! ")
         self.max_speed += add_speed
         return (True, f"Car {self.merk} , now speed: {self.max_speed} km/h")
 
@@ -17,6 +19,6 @@ class Car:
         
 # Create Object
 
-my_car = Car("McLeren", "Grey")
+my_car = SuperCar("McLeren", "Grey")
 my_car.car_speed(200)
 my_car.transfer_owner("Bob","Sydney")
