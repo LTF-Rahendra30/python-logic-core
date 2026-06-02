@@ -8,10 +8,15 @@ class Car:
         self.max_speed = 0
 
     # Method
-    def car_info(self,add_speed):
+    def car_speed(self,add_speed):
         self.max_speed += add_speed
         return (True, f"Car {self.merk} , now speed: {self.max_speed} km/h")
 
     def transfer_owner(self,new_owner,city):
         return (True, f"Car: {self.merk} {self.color}, New owner: {new_owner}, city: {city} ")
         
+# Create Object
+
+my_car = Car("McLeren", "Grey")
+my_car.car_speed(200)
+my_car.transfer_owner("Bob","Sydney")
