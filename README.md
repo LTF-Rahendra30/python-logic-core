@@ -1,6 +1,8 @@
 # Python Logic Core
 
-Building strong logic before building smart contracts.
+Building strong logic programming , Building algorthm before write any code on the computer.
+
+## 📖 Description & Overview
 
 This repository documents my journey learning core Python logic:
 
@@ -8,21 +10,14 @@ This repository documents my journey learning core Python logic:
 - Functions
 - Data Structures
 - OOP
-
-Repository ini adalah dokumentasi perjalanan saya memperkuat fundamental Python:
-
-- Loop
-- Function
-- Data Structure
-- OOP
-- Problem Solving Logic
+- Logic Programming
 
 ## Why This Repo?
 
-Before Web3, before Smart Contract, before Blockchain —
+Before write any code on the computer or build some project, and Before Web3, before Smart Contract, before Blockchain or berofe build something —
 logic comes first.
 
-Target:
+**🎯Goals :**
 
 - Build strong logic foundation
 - Build strong engineering mindset
