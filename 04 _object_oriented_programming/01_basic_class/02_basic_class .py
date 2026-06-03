@@ -12,6 +12,8 @@ class Student:
 
     def introduction(self):
         print(f"Helo, my name: {self.name}")
+    def say_hello(self,name):
+        print(f"Hello! {self.name} my name is {name}, the person who said hello to you")
 # Create Object
 university1 = University("NYC","A","20")
 print(type(university1))# Type : CLass
@@ -23,4 +25,5 @@ print(university1.world_rank) # 20
 print("="* 100)
 student1 = Student()
 student1.name = "Bob"
-student1.introduction()
+student1.introduction() # Helo, my name: Bob
+student1.say_hello("Choki")
