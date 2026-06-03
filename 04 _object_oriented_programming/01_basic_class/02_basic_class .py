@@ -5,7 +5,7 @@ class University:
         self.acreditation = acreditation
         self.world_rank = world_rank
 
-# Without __init__
+# Without __init__ to encapculation atribute and method in the class
 class Student:
     name = ""
     gpa = 0
@@ -26,4 +26,4 @@ print("="* 100)
 student1 = Student()
 student1.name = "Bob"
 student1.introduction() # Helo, my name: Bob
-student1.say_hello("Choki")
+student1.say_hello("Choki") # Hello! Bob my name is Choki, that someone who say hello to you
