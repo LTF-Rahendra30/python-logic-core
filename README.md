@@ -1,5 +1,5 @@
 # Python Logic Core
-A structured self-learning journey through programming fundamentals, algorithms, and data structures using Python as a vehicle for universal logic mastery.
+A structured self-learning journey through programming fundamentals, algorithms, and data structures using Python as a vehicle for universal logic mastery in the AI era.
 
 
 ## 📖 Description & Overview
