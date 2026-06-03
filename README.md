@@ -10,7 +10,10 @@ logic comes first.
 
 **Why Python?**
 Because:
-1. Python Universal logic
+1. Python Universal logic.
+2. Python programming language is friendly for beginners.
+3. Clean syntax and easy to read.
+
 This repository documents my journey learning core Python logic:
 
 - Loops
@@ -26,7 +29,16 @@ This repository documents my journey learning core Python logic:
 - Create solid coding discipline
 - Prepare for Smart Contract development & Web3
 
+## 📂 Folder structure
+```text
+python-logic-core/
+├── 01_loop/
+├── 02_functions/
+├── 03_data_structures/
+├── 04_oop/
+└── 05_project/
 
+```
 ## 📊Learning Progress
 
 - [x] Loops
