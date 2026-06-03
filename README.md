@@ -31,11 +31,11 @@ Target:
 
 ## Learning Progress
 
-- [ ] Loops
-- [ ] Functions
+- [x] Loops
+- [x] Functions
 - [ ] Data Structures
 - [ ] OOP
-- [ ] Mini Project
+- [x] Mini Project
 
 Progress will be updated consistently.
 
