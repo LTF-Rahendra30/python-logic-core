@@ -1,3 +1,20 @@
+""""
+The simple scenario:
+
+There are 3 user:
+
+- name
+- age
+- balance
+
+And there is a function:
+
+- introduce user()
+- can_afford() chek if the user can buy something (sufficient balance or not)
+"""
+
+
+
 class User():
     def __init__(self,name,age,balance):
         self.name = name
