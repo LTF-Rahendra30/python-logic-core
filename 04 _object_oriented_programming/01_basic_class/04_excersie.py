@@ -13,14 +13,19 @@ And there is a function:
 - can_afford() chek if the user can buy something (sufficient balance or not)
 """
 
-
-
 class User():
     def __init__(self,name,age,balance):
-        self.name = name
-        self.age = age
-        self.balance = balance
+    
+        self.name = str(name)
+        self.age = str(age)
+        self.balance = int(balance)
         self.price = 0
+
+        # Error handling
+        if balance <= 0:
+            raise ValueError("Cant be zero or Negative")
+        self.balance = int(balance)
+        
 
     def introduce_user(self):
         print(f"Hello {self.name} | age: {self.age} | Balance: {self.balance}")
@@ -31,7 +36,10 @@ class User():
         self.balance -= price
         return (True,f"Success, your balance now at {self.balance}")
 
-# Create Object   
-user1 = User("Bob",12,10000)
-user1.introduce_user()
-print(user1.can_afford(1000))
+# Create Object
+try:
+    user1 = User("Bob",12,0)
+    user1.introduce_user()
+    print(user1.can_afford(1000))
+except ValueError as e:
+    print(f"Errors for create objcet: {e}")
