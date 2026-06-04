@@ -25,7 +25,7 @@ The goal is to move beyond syntax and develop a deeper understanding of programm
  ├── 01_basic_class/
  ├── 02_state_and_method/
  ├── 03_encapsulation/
- └── project_wallet_oop/
+ └── project/
  ```
 
  ## 📖 Description
