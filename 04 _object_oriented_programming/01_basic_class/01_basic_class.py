@@ -1,5 +1,9 @@
+# Whitout Class
 
-# The Class of Car
+
+
+
+# With Class
 class SuperCar:
     # Artibute of the Car
     def __init__(self,merk,color):
@@ -33,6 +37,11 @@ class SuperCar:
 # Create Object
 
 my_car = SuperCar("McLeren", "Grey")
+my_car2 = SuperCar("Porche", "Black")
+print("Merk: ",my_car.merk)
+print("Color: ",my_car.color)
+print("Merk: ",my_car2.merk)
+print("Color: ",my_car2.color)
 speed = my_car.car_speed(250)
 buy = my_car.buy_my_car(520000,19,"bob","Florida")
 print(speed)
