@@ -1,7 +1,17 @@
 # Whitout Class
+merk1 = "Ferarri"
+merk2 = "lamborgini"
 
+price1 = 400000
+price2 = 600000
 
+def setup(merk,price):
+    print(f"Car: {merk} Price: {price}")
 
+# Create
+print("========== Without OOP ==========")
+car1 = setup(merk1,price1)
+car2 = setup(merk2,price2)
 
 # With Class
 class SuperCar:
@@ -36,6 +46,7 @@ class SuperCar:
 
 # Create Object
 
+print("========== With OOP ==========")
 my_car = SuperCar("McLeren", "Grey")
 my_car2 = SuperCar("Porche", "Black")
 print("Merk: ",my_car.merk)
