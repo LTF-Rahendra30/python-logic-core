@@ -12,17 +12,23 @@ def setup(merk,price):
 print("========== Without OOP ==========")
 car1 = setup(merk1,price1)
 car2 = setup(merk2,price2)
+"""
+This is work, but this code isn't scalabele,separate data, and very diffucult to maintain
+"""
 
 # With Class
 class SuperCar:
     # Artibute of the Car
-    def __init__(self,merk,color):
+    def __init__(self,merk,owner,color):
         self.merk = merk
         self.color = color
+        self.owner = owner
         self.max_speed = 0
         self.price = 500000 
 
     # Method
+    def setup(self):
+        print(f"Car: {self.merk}| Owner: {self.owner} | Color: {self.color}")
     def car_speed(self,add_speed):
         if self.max_speed >= 200:
             return(False, f"This isn't a Super Car! ")
@@ -47,13 +53,16 @@ class SuperCar:
 # Create Object
 
 print("========== With OOP ==========")
-my_car = SuperCar("McLeren", "Grey")
-my_car2 = SuperCar("Porche", "Black")
-print("Merk: ",my_car.merk)
-print("Color: ",my_car.color)
-print("Merk: ",my_car2.merk)
-print("Color: ",my_car2.color)
-speed = my_car.car_speed(250)
-buy = my_car.buy_my_car(520000,19,"bob","Florida")
-print(speed)
-print(buy)
+my_car = SuperCar("McLeren", "Andrew","Grey")
+my_car2 = SuperCar("Porche", "Bob","Black")
+my_car.setup()
+my_car2.setup()
+"""
+No need to enter input in parameter, because we've entered the input in the parameter when create the objcet
+
+And in the function: 'def __init__' ,we've done the attribute/variabel setup by 'self' 
+"""
+# speed = my_car.car_speed(250)
+# buy = my_car.buy_my_car(520000,19,"bob","Florida")
+# print(speed)
+# print(buy)
