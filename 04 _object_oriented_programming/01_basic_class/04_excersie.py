@@ -18,7 +18,7 @@ class User():
     
         
         # Error handling
-        if balance and age <= 0:
+        if balance or age <= 0:
             raise ValueError("Cant be zero or Negative")
         self.name = str(name)
         self.age = int(age)
