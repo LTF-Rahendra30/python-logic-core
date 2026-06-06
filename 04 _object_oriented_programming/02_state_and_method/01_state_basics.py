@@ -15,3 +15,6 @@ class User:
     # Method
     def get_info(self):
         return f"Welcome: {self.name}"
+    
+user1 = User("Jerry",2000)
+print(user1.get_info())
