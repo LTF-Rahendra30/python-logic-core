@@ -17,9 +17,8 @@ class User():
     def __init__(self,name,age,balance):
     
         self.name = str(name)
-        self.age = str(age)
+        self.age = int(age)
         
-
         # Error handling
         if balance <= 0:
             raise ValueError("Cant be zero or Negative")
