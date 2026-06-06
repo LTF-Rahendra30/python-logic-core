@@ -26,7 +26,7 @@ class User():
         
 
     def introduce_user(self):
-        print(f"Hello {self.name} | age: {self.age} | Balance: {self.balance}")
+        return f"Hello {self.name} | age: {self.age} | Balance: {self.balance}"
     
     def can_afford(self,price):
         if price > self.balance:
