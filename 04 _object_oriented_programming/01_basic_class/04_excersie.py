@@ -18,7 +18,6 @@ class User():
     
         self.name = str(name)
         self.age = str(age)
-        self.balance = int(balance)
         
 
         # Error handling
