@@ -16,12 +16,12 @@ And there is a function:
 class User():
     def __init__(self,name,age,balance):
     
-        self.name = str(name)
-        self.age = int(age)
         
         # Error handling
-        if balance <= 0:
+        if balance and age <= 0:
             raise ValueError("Cant be zero or Negative")
+        self.name = str(name)
+        self.age = int(age)
         self.balance = int(balance)
         
 
@@ -39,7 +39,7 @@ class User():
         return (True,f"Success buy, your balance now at {self.balance}")
 # Create Object
 try:
-    user1 = User("Bob",12,10000)
+    user1 = User("Bob",1,10000)
     user1.introduce_user()
     print(user1.can_afford(1000))
     print(user1.spend(2000))
