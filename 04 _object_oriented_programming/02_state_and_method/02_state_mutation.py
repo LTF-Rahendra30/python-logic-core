@@ -8,7 +8,7 @@ class User:
 
     # Method
     def get_info(self):
-        return f"Welcome: {self.name}"
+        return f"Welcome: {self.name} | balance: {self.balance}"
     
     def deposit(self,amount):
         if amount <= 0:
@@ -16,3 +16,11 @@ class User:
         self.balance += amount
         return True
     
+    def withdraw(self,amount):
+        if amount <= 0 or amount > self.balance:
+            return False
+        self.balance -= amount
+        return True
+
+user1 = User("Bob",0)
+print(user1.get_info())
