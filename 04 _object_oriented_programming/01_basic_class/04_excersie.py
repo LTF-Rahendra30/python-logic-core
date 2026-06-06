@@ -40,7 +40,7 @@ class User():
 # Create Object
 try:
     user1 = User("Bob",1,10000)
-    user1.introduce_user()
+    print(user1.introduce_user())
     print(user1.can_afford(1000))
     print(user1.spend(2000))
 except ValueError as e:
