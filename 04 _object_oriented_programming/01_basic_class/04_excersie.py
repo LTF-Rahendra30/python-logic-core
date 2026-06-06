@@ -29,7 +29,7 @@ class User():
         return f"Hello {self.name} | age: {self.age} | Balance: {self.balance}"
     
     def spend(self,amount):
-        if amount >= self.balance:
+        if amount > self.balance:
             return (False, "Your balance isnt enough")
         self.balance -= amount
         return (True,f"Success buy, your balance now at {self.balance}")
