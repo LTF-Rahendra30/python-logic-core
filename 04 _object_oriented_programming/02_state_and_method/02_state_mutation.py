@@ -4,7 +4,7 @@ class User:
     # Constructor
     def __init__(self,name,balance): # Atributte
         self.name = name 
-        self.balance = balance
+        self.balance = 0
 
     # Method
     def get_info(self):
@@ -23,4 +23,8 @@ class User:
         return True
 
 user1 = User("Bob",0)
-print(user1.get_info())
+print(user1.get_info()) # Before Deposit the balance is zero
+print(user1.deposit(100))
+print(user1.get_info()) # After Deposit and Before Withdraw the balance is 1000
+print(user1.withdraw(10))
+print(user1.get_info()) # After Withdraw the balance is 800
