@@ -11,4 +11,15 @@ class BankAccount:
         self.name = name
         self.balancen = balance
 
+    def deposit(self,amount):
+        if amount <= 0:
+            return False
+        self.balancen += amount
+        return True
+    
+    def withdraw(self,amount):
+        if amount > self.balancen or amount <= 0:
+            return False
+        self.balancen -= amount
+        return True
     
