@@ -24,11 +24,19 @@ class BankAccount:
         if amount > self.balance or amount <= 0:
             return False
         self.balance -= amount
-        return True
+        return True, self.get_info()
     
     def transfer(self,target_account,amount):
         if amount > self.balance or amount <= 0:
             return False
+        # Call method
+        self.withdraw(amount)
+        self.deposit(amount)
 
+        return True, f"Transer Succesed to: {target_account}", self.get_info()
+
+# Create Object
 user1 = BankAccount("bob",100)
-print(user1.deposit(100))
+print(user1.get_info())
+print(user1.deposit(50))
+print(user1.transfer("Jerry",10))
