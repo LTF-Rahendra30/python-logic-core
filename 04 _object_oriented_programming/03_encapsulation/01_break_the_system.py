@@ -4,8 +4,6 @@ class BankAccount:
         self.balance = balance
 
     def deposit(self,amount):
-        if amount <= 0:
-            return False
         self.balance += amount
         return True
     
@@ -14,5 +12,11 @@ class BankAccount:
             return False,None
         self.balance -= amount
         return True
-    
-user1 = BankAccount("Bob",0)
+
+# Create Object
+user1 = BankAccount("bob",100)
+user2 = BankAccount("jerry",350)
+
+print("before: ",user1.balance)
+
+# Normal Usage
