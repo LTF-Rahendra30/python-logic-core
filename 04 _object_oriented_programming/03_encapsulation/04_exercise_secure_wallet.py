@@ -13,9 +13,10 @@ class Wallet:
         return True
 
     def withdraw(self, amount):
-        # TODO: validasi
-        pass
-
+        if amount > self._balance or amount <= 0:
+            return False
+        self._balance -= amount
+        return True
     def transfer(self, target_wallet, amount):
         # TODO:
         # 1. withdraw dari self
