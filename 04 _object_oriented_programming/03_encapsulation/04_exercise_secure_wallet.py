@@ -35,9 +35,32 @@ w2 = Wallet("Bob",50)
 print("Before:")
 print(f"wallet 1: {w1.get_balance()}, Wallet 2: {w2.get_balance()}")
 
+"""
+The output:
+Before:
+wallet 1: 100, Wallet 2: 50 
+"""
+
+# Deposit
+print(f"Deposit wallet 1: {w1.deposit(900)}, now balance at: {w1.get_balance()}")
+
 # Todo test transfer 
 w1.transfer(w2,30)
+"""
+The output:
+Deposit wallet 1: True, now balance at: 1000
+
+if balance + amount deposit > 1000, deposit is fail
+"""
+
 
 # Get info
-print("After")
+print("After:")
 print(f"wallet 1: {w1.get_balance()}, Wallet 2: {w2.get_balance()}")
+"""
+The output:
+
+After:
+wallet 1: 970, Wallet 2: 80
+
+"""
