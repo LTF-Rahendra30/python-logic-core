@@ -30,7 +30,6 @@ class Wallet:
         if not success:
             self.deposit(amount)
             return False
-        target_wallet.deposit(amount)
         return True
 
 # Test
