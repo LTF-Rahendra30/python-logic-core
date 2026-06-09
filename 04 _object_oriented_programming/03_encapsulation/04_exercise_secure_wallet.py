@@ -8,7 +8,7 @@ class Wallet:
         return self._balance
 
     def deposit(self, amount):
-        if amount <= 0 or self._balance + amount > 1000:
+        if amount <= 0 or self._balance + amount > self._max_balance:
             return False
         self._balance += amount
         return True
@@ -34,7 +34,7 @@ class Wallet:
 
 # Test
 w1 = Wallet("Alice",100)
-w2 = Wallet("Bob",1000)
+w2 = Wallet("Bob",800)
 
 # get info
 print("Before:")
