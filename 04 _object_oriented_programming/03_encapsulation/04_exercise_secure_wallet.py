@@ -17,10 +17,13 @@ class Wallet:
             return False
         self._balance -= amount
         return True
+    
     def transfer(self, target_wallet, amount):
-        # TODO:
-        # 1. withdraw dari self
-        # 2. kalau gagal → stop
-        # 3. deposit ke target
-        pass
+        # Call method
+        success = self.withdraw(amount)
+
+        if not success:
+            return False
+        target_wallet.deposit(amount)
+        return True
 
