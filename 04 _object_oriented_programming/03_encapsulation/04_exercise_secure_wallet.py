@@ -2,6 +2,7 @@ class Wallet:
     def __init__(self, owner, balance):
         self.owner = owner
         self._balance = balance
+        self._max_balance = 1000
 
     def get_balance(self):
         return self._balance
@@ -19,17 +20,22 @@ class Wallet:
         return True
     
     def transfer(self, target_wallet, amount):
-        # Call method
+        # Call method to withdraw from balance sender
         success = self.withdraw(amount)
-
         if not success:
+            return False
+        
+        # Call method to deposit wallet when transfer from sender to receiver
+        success = target_wallet.deposit(amount)
+        if not success:
+            self.deposit(amount)
             return False
         target_wallet.deposit(amount)
         return True
 
 # Test
 w1 = Wallet("Alice",100)
-w2 = Wallet("Bob",50)
+w2 = Wallet("Bob",1000)
 
 # get info
 print("Before:")
@@ -45,7 +51,7 @@ wallet 1: 100, Wallet 2: 50
 print(f"Deposit wallet 1: {w1.deposit(900)}, now balance at: {w1.get_balance()}")
 
 # Todo test transfer 
-w1.transfer(w2,30)
+w1.transfer(w2,200)
 """
 The output:
 Deposit wallet 1: True, now balance at: 1000
