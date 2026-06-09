@@ -37,7 +37,7 @@ class BankAccount:
         return True, f"Transer Succesed, Amount: {amount}", self.get_info()
 
 # Create Object
-user1 = BankAccount("bob",100)
+user1 = BankAccount("bob",-100)
 user2 = BankAccount("jerry",350)
 
 # User 1

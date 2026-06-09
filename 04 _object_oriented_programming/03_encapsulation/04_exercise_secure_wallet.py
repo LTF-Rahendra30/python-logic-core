@@ -7,9 +7,9 @@ class Wallet:
         return self._balance
 
     def deposit(self, amount):
-        if amount <=0:
+        if amount <= 0 or self._balance + amount > 1000:
             return False
-        self._balance +=amount
+        self._balance += amount
         return True
 
     def withdraw(self, amount):
